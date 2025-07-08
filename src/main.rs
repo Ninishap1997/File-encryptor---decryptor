@@ -48,7 +48,7 @@ fn main() -> Result<()> {
                 Decryptor::Passphrase(d) => d.decrypt(&passphrase.clone(), None)?,
                 _ => return Err(anyhow::anyhow!("Expected passphrase-based encryption")),
             };
-            io::copy(&mut reader, &mut output_file).context("Не удалось расшифровать файлъ")?;
+            io::copy(&mut reader, &mut output_file).context("Не удалось расшифровать файл")?;
         }
     }
 
